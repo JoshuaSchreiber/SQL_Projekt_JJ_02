@@ -5,7 +5,6 @@ const Server = require('./server');
 const serverInstance = new Server();
 
 const app = express();
-
 app.use(cors()); // Enable CORS
 app.use(bodyParser.json()); // Support JSON-encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // Support URL-encoded bodies
