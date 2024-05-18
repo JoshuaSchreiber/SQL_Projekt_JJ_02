@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Call Server Functions</title>
+</head>
+<body>
+<h1>Call Server Functions</h1>
+<button id="startButton">Start Server</button>
+<button id="stopButton">Stop Server</button>
+
+<script>
+    document.getElementById('startButton').addEventListener('click', () => {
+        fetch('/startServer')
+            .then(response => {
+                if (response.ok) {
+                    console.log('Server started successfully');
+                } else {
+                    console.error('Failed to start server');
+                }
+            })
+            .catch(error => console.error('Error:', error));
+    });
+
+    document.getElementById('stopButton').addEventListener('click', () => {
+        fetch('/stopServer')
+            .then(response => {
+                if (response.ok) {
+                    console.log('Server stopped successfully');
+                } else {
+                    console.error('Failed to stop server');
+                }
+            })
+            .catch(error => console.error('Error:', error));
+    });
+</script>
+</body>
+</html>
