@@ -5,19 +5,13 @@
     <title>Run Function</title>
 </head>
 <body>
-<h1>Server Control</h1>
-<button onclick="startServer()">Start Server</button>
-<button onclick="stopServer()">Stop Server</button>
-
-<h2>Execute SELECT Query</h2>
-<form id="selectForm">
-    <label for="query">Enter SQL SELECT Query:</label><br>
-    <input type="text" id="query" name="query"><br>
-    <button type="button" onclick="executeQuery()">Execute Query</button>
-</form>
-
 <script>
+    const Server = require('./server');
+    const server = new Server();
 
+    server.start();
+    server.select('SELECT * FROM projekte');
+    server.stopWithDelay();
 </script>
 </body>
 </html>

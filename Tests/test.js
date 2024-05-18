@@ -1,4 +1,4 @@
-const Server = require('./server');
+const Server = require('../Scrips/server');
 const server = new Server();
 
 server.start();
