@@ -2,37 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Call Server Functions</title>
+    <title>Run Function</title>
 </head>
 <body>
-<h1>Call Server Functions</h1>
-<button id="startButton">Start Server</button>
-<button id="stopButton">Stop Server</button>
+<h1>Server Control</h1>
+<button onclick="startServer()">Start Server</button>
+<button onclick="stopServer()">Stop Server</button>
+
+<h2>Execute SELECT Query</h2>
+<form id="selectForm">
+    <label for="query">Enter SQL SELECT Query:</label><br>
+    <input type="text" id="query" name="query"><br>
+    <button type="button" onclick="executeQuery()">Execute Query</button>
+</form>
 
 <script>
-    document.getElementById('startButton').addEventListener('click', () => {
-        fetch('/startServer')
-            .then(response => {
-                if (response.ok) {
-                    console.log('Server started successfully');
-                } else {
-                    console.error('Failed to start server');
-                }
-            })
-            .catch(error => console.error('Error:', error));
-    });
 
-    document.getElementById('stopButton').addEventListener('click', () => {
-        fetch('/stopServer')
-            .then(response => {
-                if (response.ok) {
-                    console.log('Server stopped successfully');
-                } else {
-                    console.error('Failed to stop server');
-                }
-            })
-            .catch(error => console.error('Error:', error));
-    });
 </script>
 </body>
 </html>

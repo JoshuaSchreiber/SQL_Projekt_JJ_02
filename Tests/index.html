@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Run Server Functions</title>
+    <script>
+        async function startServer() {
+            await fetch('http://localhost:3001/startServer')
+                .then(response => console.log('Server started'))
+                .catch(error => console.error('Error:', error));
+        }
+
+        async function selectData() {
+            await fetch('http://localhost:3001/select')
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Data selected');
+                    document.getElementById('results').textContent = JSON.stringify(data, null, 2);
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        async function stopServer() {
+            await fetch('http://localhost:3001/stopServer')
+                .then(response => console.log('Server stopped'))
+                .catch(error => console.error('Error:', error));
+        }
+
+        async function stopServerWithDelay() {
+            await fetch('http://localhost:3001/stopServerWithDelay')
+                .then(response => console.log('Server will stop with delay'))
+                .catch(error => console.error('Error:', error));
+        }
+
+        async function runAll() {
+            await startServer();
+            await selectData();
+            await stopServerWithDelay();
+        }
+    </script>
+</head>
+<body>
+<button onclick="runAll()">Run All Functions</button>
+<pre id="results"></pre>
+</body>
+</html>
