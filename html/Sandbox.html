@@ -22,7 +22,7 @@
                 .then(response => response.json())
                 .then(data => {
                     console.log('Data selected');
-                    document.getElementById('results').textContent = JSON.stringify(data, null, 2);
+                    displayResults(data);
                 })
                 .catch(error => console.error('Error:', error));
         }
@@ -44,12 +44,45 @@
             await selectData();
             await stopServerWithDelay();
         }
-        startServer()
+
+        function displayResults(data) {
+            const resultsContainer = document.getElementById('results');
+            resultsContainer.innerHTML = ''; // Clear previous results
+
+            const table = document.createElement('table');
+            const thead = document.createElement('thead');
+            const tbody = document.createElement('tbody');
+
+            // Create table headers
+            const headers = Object.keys(data[0]);
+            const tr = document.createElement('tr');
+            headers.forEach(header => {
+                const th = document.createElement('th');
+                th.textContent = header;
+                tr.appendChild(th);
+            });
+            thead.appendChild(tr);
+
+            // Create table rows
+            data.forEach(row => {
+                const tr = document.createElement('tr');
+                headers.forEach(header => {
+                    const td = document.createElement('td');
+                    td.textContent = row[header];
+                    tr.appendChild(td);
+                });
+                tbody.appendChild(tr);
+            });
+
+            table.appendChild(thead);
+            table.appendChild(tbody);
+            resultsContainer.appendChild(table);
+        }
     </script>
 </head>
 <body>
 <input type="text" id="queryInput" placeholder="Enter your query" />
-<button onclick="selectData()">select Data</button>
-<pre id="results"></pre>
+<button onclick="runAll()">Run All Functions</button>
+<div id="results"></div>
 </body>
 </html>
