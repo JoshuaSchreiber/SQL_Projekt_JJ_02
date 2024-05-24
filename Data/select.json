@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "Projekt Alpha",
+    "beschreibung": "Entwicklung eines neuen Webshops",
+    "startdatum": "2020-12-31T23:00:00.000Z",
+    "enddatum": "2021-12-30T23:00:00.000Z",
+    "budget": 100000
+  },
+  {
+    "id": 2,
+    "name": "Projekt Beta",
+    "beschreibung": "Erstellung einer mobilen App",
+    "startdatum": "2021-05-31T22:00:00.000Z",
+    "enddatum": "2022-05-30T22:00:00.000Z",
+    "budget": 150000
+  }
+]

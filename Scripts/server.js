@@ -16,20 +16,6 @@ class Server {
         this.server = null;
     }
 
-    start() {
-        this.connection.connect((err) => {
-            if (err) {
-                console.error('Fehler beim Verbinden zur Datenbank: ' + err.stack);
-                return;
-            }
-            console.log('Erfolgreich mit der Datenbank verbunden');
-        });
-
-        this.server = this.app.listen(this.port, () => {
-            console.log(`Server läuft unter http://localhost:${this.port}`);
-        });
-    }
-
     select(query, callback) {
         this.connection.query(query, (err, results) => {
             if (err) {

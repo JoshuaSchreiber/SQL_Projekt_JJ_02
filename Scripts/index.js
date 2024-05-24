@@ -9,10 +9,6 @@ app.use(cors()); // Enable CORS
 app.use(bodyParser.json()); // Support JSON-encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // Support URL-encoded bodies
 
-app.get('/startServer', (req, res) => {
-    serverInstance.start();
-    res.sendStatus(200);
-});
 
 app.post('/select', (req, res) => {
     const query = req.body.query;
