@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../Bilder/favicon_02.jpg" type="image/x-icon">
+    <title>SQL_Live</title>
+    <link rel="stylesheet" href="../Styles/tabelizer.css">
+    <link rel="stylesheet" href="../Styles/divElements.css">
+    <link rel="stylesheet" href="../Styles/dropDownMenu.css">
+    <script src="../Scripts/Sandbox.js" defer></script>
+    <script src="../Scripts/dropDownMenu.js"></script>
+</head>
+<body>
+    <div class="grey-background">
+        <div class="container">
+            <input type="text" id="textField" placeholder="Select an option">
+            <div class="dropdown">
+                <button class="dropbtn">Open Menu</button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="selectOption('Option 1')">Option 1</a>
+                    <a href="#" onclick="selectOption('Option 2')">Option 2</a>
+                    <a href="#" onclick="selectOption('Option 3')">Option 3</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="orange-background">
+        <input type="text" id="queryInput" placeholder="Enter your query" />
+        <button onclick="selectData()">Run</button>
+    </div>
+    <div class="grey-background">
+        <table id="results" class="tableizer-table"></table>
+    </div>
+</body>
+</html>

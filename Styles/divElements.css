@@ -1,0 +1,17 @@
+.orange-background {
+    background-color: #FFB347; /* Nice orange color */
+    padding: 20px;
+    margin: 20px;
+    color: #fff; /* White text for contrast */
+    font-family: Arial, sans-serif;
+    border-radius: 3px; /* Rounded corners */
+}
+
+.grey-background {
+    background-color: #B0B0B0; /* Good grey color */
+    padding: 20px;
+    margin: 20px;
+    color: #000; /* Black text for contrast */
+    font-family: Arial, sans-serif;
+    border-radius: 5px; /* Rounded corners */
+}
