@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="../Bilder/favicon_02.jpg" type="image/x-icon">
+    <link rel="icon" href="../Bilder/EingebundeneBilder/favicon_02.jpg" type="image/x-icon">
     <title>SQL_Live</title>
     <link rel="stylesheet" href="../Styles/tabelizer.css">
     <link rel="stylesheet" href="../Styles/divElements.css">
@@ -13,19 +13,24 @@
 <body>
     <div class="grey-background">
         <div class="container">
-            <input type="text" id="textField" placeholder="Select an option">
-            <div class="dropdown">
-                <button class="dropbtn">Open Menu</button>
-                <div class="dropdown-content">
-                    <a href="#" onclick="selectOption('Option 1')">Option 1</a>
-                    <a href="#" onclick="selectOption('Option 2')">Option 2</a>
-                    <a href="#" onclick="selectOption('Option 3')">Option 3</a>
+            <div id="textField" class="boxBig">
+                <h1 id="textFieldHeader" style="font-size: 20px"></h1>
+                <b id="textFieldContent"  style="font-size: 13px; font-weight: normal"></b>
+            </div>
+            <div class="boxSmall">
+                <div class="dropdown">
+                    <button class="dropbtn">Tasks</button>
+                    <div class="dropdown-content">
+                        <a href="#" data-index="0">Task 1</a>
+                        <a href="#" data-index="1">Task 2</a>
+                        <a href="#" data-index="2">Task 3</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="orange-background">
-        <input type="text" id="queryInput" placeholder="Enter your query" />
+        <textarea id="queryInput" placeholder="Enter your query" cols="50" rows="5"></textarea>
         <button onclick="selectData()">Run</button>
     </div>
     <div class="grey-background">

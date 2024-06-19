@@ -2,10 +2,64 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="../Bilder/favicon_02.jpg" type="image/x-icon">
+    <link rel="icon" href="../Bilder/EingebundeneBilder/favicon_02.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="../Styles/divElements.css">
     <title>Title</title>
 </head>
 <body>
-    <img src="../Bilder/ERModel_Final.png" alt=":-(">
+    <div class="grey-background">
+        <h1>GI Gaming Company Databank</h1>
+    </div>
+    <div class="orange-background">
+        <h1>ER-Modell</h1>
+        <img src="../Bilder/EingebundeneBilder/ERModell_05.png">
+    </div>
+    <div class="grey-background">
+        <h1>Relationsmodell: <br></h1>
+        <h2>
+            <br>
+            Project{ ProjektName_pk, Money, TimeConsumed, Sponsor, Customer, TaskPrerequsite, Department_ID_fk#} <br>
+            Mitarbeiter{Mitarbeiter_ID_pk, profession, gehalt, Manager_ID, Untergeordneter_ID, Department_ID_fk#}<br>
+            Leading_Group{LG_ID_pk, obsession, depressionsstatus}<br>
+            Department{Department_ID_pk, Studio, LG_ID_FK#}<br>
+            ProgrammingD{ Department_ID_pk, Studio, LG_ID_FK#, coffee, programmingEnvironment}<br>
+
+            AddsD{ Department_ID_pk, Studio, LG_ID_FK#, Style, AddCampaing}<br>
+            DraftsD{ Department_ID_pk, Studio, LG_ID_FK#, Entwurf, predicament}<br>
+            StylesD{ StyleID_pk, Forms, Color, AddsD_ID#}<br>
+
+            ProjektDepartment{Department_ID_FK#,  Project_ID_FK#}<br>
+        </h2>
+    </div>
+    <div class="orange-background">
+        <h1>User-Story: <br></h1>
+        <h2>
+            <br>
+            The Game Company is a small company with about a hundred workers in total. There are three departments.<br>
+
+            The first department creates the draft of a game.<br>
+
+            The second department is the developer Studio.<br>
+
+            The third is the advertising department. They get the basic draft and some game footage to produce adds for the public. The style is predetermined and shall not change within one add.<br>
+
+            Every department has Members. Most of them are overseen by Managers, others are managers. And some manage these managers. At the top is the leading group.<br>
+
+            Apart from that each department also has many private Resources like intel or Data about customers, only for their department.<br>
+
+            But there are also shared intel across the departments, like a timetable and the anticipated publication date.<br>
+
+            Lastly there is a special leading group that overlooks and combines all the current data about the performance and options for the whole company and instructs the group managers.<br>
+
+            All these departments exist to develop Projects. Sometimes they don’t have a project to work on and sometimes they are swept with projects in their respective departments.<br>
+
+            Possible extensions are:<br>
+
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;         Timetable at project<br>
+
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    Prerequisites for each department and customers wishes<br>
+        </h2>
+    </div>
+
 </body>
 </html>

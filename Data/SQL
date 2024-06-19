@@ -1,0 +1,237 @@
+CREATE TABLE Leading_Group (
+LG_ID_pk INT PRIMARY KEY AUTO_INCREMENT,
+obsession VARCHAR(255) NOT NULL,
+depressionsstatus VARCHAR(255) NOT NULL
+);
+
+-- Create Department Table
+CREATE TABLE Department (
+Department_ID_pk INT PRIMARY KEY,
+Studio VARCHAR(255) NOT NULL,
+DepartmentTyp INT,
+LG_ID_FK INT,
+FOREIGN KEY (LG_ID_FK) REFERENCES Leading_Group(LG_ID_pk)
+);
+
+-- Create ProgrammingD Table
+CREATE TABLE ProgrammingD (
+Department_ID_pk INT PRIMARY KEY,
+Studio VARCHAR(255) NOT NULL,
+LG_ID_FK INT,
+coffee BOOLEAN NOT NULL,
+programmingEnvironment VARCHAR(255) NOT NULL,
+FOREIGN KEY (Department_ID_pk) REFERENCES Department(Department_ID_pk)
+);
+
+-- Create AddsD Table
+CREATE TABLE AddsD (
+Department_ID_pk INT PRIMARY KEY,
+Studio VARCHAR(255) NOT NULL,
+LG_ID_FK INT,
+Style VARCHAR(255) NOT NULL,
+AddCampaign VARCHAR(255) NOT NULL,
+FOREIGN KEY (Department_ID_pk) REFERENCES Department(Department_ID_pk)
+);
+
+-- Create DraftsD Table
+CREATE TABLE DraftsD (
+Department_ID_pk INT PRIMARY KEY,
+Studio VARCHAR(255) NOT NULL,
+LG_ID_FK INT,
+Entwurf VARCHAR(255) NOT NULL,
+predicament VARCHAR(255) NOT NULL,
+FOREIGN KEY (Department_ID_pk) REFERENCES Department(Department_ID_pk)
+);
+
+-- Create StylesD Table
+CREATE TABLE StylesD (
+StyleID_pk INT PRIMARY KEY AUTO_INCREMENT,
+Forms VARCHAR(255) NOT NULL,
+Color VARCHAR(255) NOT NULL,
+AddsD_ID INT,
+FOREIGN KEY (AddsD_ID) REFERENCES AddsD(Department_ID_pk)
+);
+
+-- Create Project Table
+CREATE TABLE Project (
+ProjektName_pk VARCHAR(255) PRIMARY KEY,
+money DECIMAL(10, 2) NOT NULL,
+TimeConsumed INT NOT NULL,
+Sponsor VARCHAR(255) NOT NULL,
+TaskPrerequisite VARCHAR(255) NOT NULL,
+Department_ID_fk INT,
+FOREIGN KEY (Department_ID_fk) REFERENCES Department(Department_ID_pk)
+);
+
+-- Create Mitarbeiter (Worker) Table
+CREATE TABLE Mitarbeiter (
+Mitarbeiter_ID_pk INT PRIMARY KEY AUTO_INCREMENT,
+profession VARCHAR(255) NOT NULL,
+gehalt DECIMAL(10, 2) NOT NULL,
+Manager_ID INT,
+Untergeordneter_ID INT,
+Department_ID_fk INT,
+FOREIGN KEY (Department_ID_fk) REFERENCES Department(Department_ID_pk)
+);
+
+-- Create ProjektDepartment Table
+CREATE TABLE ProjektDepartment (
+Department_ID_FK INT,
+Project_ID_FK VARCHAR(255),
+FOREIGN KEY (Department_ID_FK) REFERENCES Department(Department_ID_pk),
+FOREIGN KEY (Project_ID_FK) REFERENCES Project(ProjektName_pk)
+);
+
+-- Insert Sample Data into Leading_Group
+INSERT INTO Leading_Group (obsession, depressionsstatus) VALUES
+('Innovation', 'None'),
+('Marketing', 'Low'),
+('Design', 'Moderate'),
+('Research', 'High'),
+('Quality Assurance', 'Low'),
+('Customer Relations', 'Moderate'),
+('Financial Planning', 'None'),
+('Strategy', 'Low'),
+('Operations', 'Moderate'),
+('HR', 'Low');
+
+-- Insert Sample Data into Department
+-- Insert Sample Data into Department
+INSERT INTO Department (Department_ID_pk, Studio, DepartmentTyp, LG_ID_FK) VALUES
+(1, 'Development Studio', 1, 1),
+(2, 'AI Development Studio', 1, 2),
+(3, 'Mobile Dev Studio', 1, 3),
+(4, 'Game Dev Studio', 1, 4),
+(5, 'Backend Dev Studio', 1, 5),
+(6, 'Frontend Dev Studio', 1, 6),
+(7, 'Data Science Studio', 1, 7),
+(8, 'DevOps Studio', 1, 8),
+(9, 'Blockchain Dev Studio', 1, 9),
+(10, 'Embedded Systems Studio', 1, 1),
+(11, 'Global Marketing Studio', 2, 2),
+(12, 'Digital Marketing Studio', 2, 3),
+(13, 'Social Media Studio', 2, 4),
+(14, 'Content Marketing Studio', 2, 5),
+(15, 'SEO Studio', 2, 6),
+(16, 'Print Marketing Studio', 2, 7),
+(17, 'Video Marketing Studio', 2, 8),
+(18, 'Email Marketing Studio', 2, 9),
+(19, 'Influencer Marketing Studio', 2, 1),
+(20, 'Event Marketing Studio', 2, 2),
+(21, 'Concept Design Studio', 3, 3),
+(22, 'UI/UX Design Studio', 3, 4),
+(23, 'Character Design Studio', 3, 5),
+(24, 'Environment Design Studio', 3, 6),
+(25, 'Animation Studio', 3, 7),
+(26, '3D Design Studio', 3, 8),
+(27, 'Illustration Studio', 3, 9),
+(28, 'Typography Studio', 3, 1),
+(29, 'Brand Design Studio', 3, 2),
+(30, 'Packaging Design Studio', 3, 3);
+
+
+
+-- Insert Sample Data into ProgrammingD
+INSERT INTO ProgrammingD (Department_ID_pk, Studio, LG_ID_FK, coffee, programmingEnvironment) VALUES
+(1, 'Development Studio', 1, TRUE, 'Eclipse'),
+(2, 'AI Development Studio', 1, TRUE, 'IntelliJ IDEA'),
+(3, 'Mobile Dev Studio', 1, TRUE, 'Android Studio'),
+(4, 'Game Dev Studio', 1, TRUE, 'Unity'),
+(5, 'Backend Dev Studio', 1, TRUE, 'Visual Studio Code'),
+(6, 'Frontend Dev Studio', 1, TRUE, 'WebStorm'),
+(7, 'Data Science Studio', 1, TRUE, 'Jupyter Notebook'),
+(8, 'DevOps Studio', 1, TRUE, 'PyCharm'),
+(9, 'Blockchain Dev Studio', 1, TRUE, 'Remix IDE'),
+(10, 'Embedded Systems Studio', 1, TRUE, 'Keil uVision');
+
+-- Insert Sample Data into AddsD
+INSERT INTO AddsD (Department_ID_pk, Studio, LG_ID_FK, Style, AddCampaign) VALUES
+(11, 'Global Marketing Studio', 2, 'Sleek', 'Global Reach 2024'),
+(12, 'Digital Marketing Studio', 2, 'Modern', 'Online Expansion 2024'),
+(13, 'Social Media Studio', 2, 'Vibrant', 'Social Media Blitz 2024'),
+(14, 'Content Marketing Studio', 2, 'Bold', 'Content Explosion 2024'),
+(15, 'SEO Studio', 2, 'Minimalist', 'SEO Domination 2024'),
+(16, 'Print Marketing Studio', 2, 'Classic', 'Print Revival 2024'),
+(17, 'Video Marketing Studio', 2, 'Dynamic', 'Video Ads 2024'),
+(18, 'Email Marketing Studio', 2, 'Engaging', 'Email Blitz 2024'),
+(19, 'Influencer Marketing Studio', 2, 'Trendy', 'Influencer Connect 2024'),
+(20, 'Event Marketing Studio', 2, 'Interactive', 'Event Surge 2024');
+
+INSERT INTO DraftsD (Department_ID_pk, Studio, LG_ID_FK, Entwurf, predicament) VALUES
+(21, 'Concept Design Studio', 3, 'Early Stage', 'Time Crunch'),
+(22, 'UI/UX Design Studio', 3, 'Mid Stage', 'Resource Constraint'),
+(23, 'Character Design Studio', 3, 'Final Stage', 'Client Feedback'),
+(24, 'Environment Design Studio', 3, 'Initial Sketch', 'Creative Block'),
+(25, 'Animation Studio', 3, 'Detailed Design', 'Budget Cuts'),
+(26, '3D Design Studio', 3, 'Prototype', 'Tech Limitation'),
+(27, 'Illustration Studio', 3, 'Draft', 'Client Approval'),
+(28, 'Typography Studio', 3, 'Type Selection', 'Font Issues'),
+(29, 'Brand Design Studio', 3, 'Brand Guidelines', 'Consistency'),
+(30, 'Packaging Design Studio', 3, 'Package Layout', 'Material Constraints');
+
+-- Insert Sample Data into StylesD
+INSERT INTO StylesD (Forms, Color, AddsD_ID) VALUES
+('Abstract', 'Blue', 11),
+('Geometric', 'Red', 12),
+('Organic', 'Green', 13),
+('Minimalist', 'White', 14),
+('Futuristic', 'Silver', 15),
+('Vintage', 'Gold', 16),
+('Modern', 'Black', 17),
+('Classic', 'Purple', 18),
+('Retro', 'Orange', 19),
+('Steampunk', 'Bronze', 20);
+
+-- Insert Sample Data into Project
+INSERT INTO Project (ProjektName_pk, money, TimeConsumed, Sponsor, TaskPrerequisite, Department_ID_fk) VALUES
+('NextGen Game Engine', 200000.00, 1800, 'Tech Innovators Inc.', 'Concept Approval', 1),
+('Mobile App Redesign', 50000.00, 600, 'App World LLC', 'Wireframe', 2),
+('AI Research Initiative', 300000.00, 2400, 'Future Tech Labs', 'Initial Research', 3),
+('Global Marketing Push', 150000.00, 1200, 'Global Reach Ltd.', 'Campaign Plan', 4),
+('Customer Support Overhaul', 80000.00, 900, 'Support Solutions', 'Needs Assessment', 5),
+('Financial Planning System', 100000.00, 1200, 'Finance Pros', 'Initial Specification', 6),
+('Strategic Expansion Plan', 50000.00, 800, 'Strategic Partners', 'Feasibility Study', 7),
+('Operations Optimization', 120000.00, 1000, 'Efficiency Experts', 'Process Mapping', 8),
+('HR Management System', 70000.00, 900, 'HR Solutions Inc.', 'Requirement Analysis', 9),
+('New Game Title', 250000.00, 2000, 'Game Publishers Ltd.', 'Storyboarding', 10),
+('AI Chatbot Development', 120000.00, 1500, 'Bot Innovators', 'Prototype', 1),
+('E-commerce Platform Upgrade', 60000.00, 900, 'ShopEase Inc.', 'UI Design', 2),
+('Virtual Reality Research', 200000.00, 2100, 'VR World', 'Initial Research', 3),
+('SEO Optimization Plan', 75000.00, 1100, 'Search Masters', 'Keyword Research', 4),
+('Customer Feedback System', 50000.00, 700, 'Feedback Corp.', 'Survey Design', 5);
+
+-- Insert Sample Data into Mitarbeiter
+INSERT INTO Mitarbeiter (profession, gehalt, Manager_ID, Untergeordneter_ID, Department_ID_fk) VALUES
+('Lead Developer', 7000.00, NULL, NULL, 1),
+('Junior Developer', 4000.00, 1, NULL, 1),
+('Senior Marketer', 6000.00, NULL, NULL, 2),
+('Marketing Intern', 2000.00, 3, NULL, 2),
+('UI/UX Designer', 5000.00, NULL, NULL, 3),
+('Design Intern', 2500.00, 5, NULL, 3),
+('Research Scientist', 8000.00, NULL, NULL, 4),
+('Research Assistant', 3000.00, 7, NULL, 4),
+('QA Engineer', 4500.00, NULL, NULL, 5),
+('Support Specialist', 4200.00, NULL, NULL, 6),
+('Financial Analyst', 5300.00, NULL, NULL, 7),
+('Strategy Consultant', 6000.00, NULL, NULL, 8),
+('Operations Manager', 6200.00, NULL, NULL, 9),
+('HR Coordinator', 4800.00, NULL, NULL, 10),
+('Technical Lead', 7500.00, 1, 2, 1),
+('Frontend Developer', 5200.00, 1, NULL, 1),
+('Content Creator', 4000.00, 3, NULL, 2),
+('Graphic Designer', 4700.00, 5, NULL, 3),
+('Lab Technician', 3500.00, 7, NULL, 4),
+('Customer Service Rep', 4000.00, NULL, NULL, 6);
+
+-- Insert Sample Data into ProjektDepartment
+INSERT INTO ProjektDepartment (Department_ID_FK, Project_ID_FK) VALUES
+(1, 'NextGen Game Engine'),
+(2, 'Mobile App Redesign'),
+(3, 'AI Research Initiative'),
+(4, 'Global Marketing Push'),
+(5, 'Customer Support Overhaul'),
+(6, 'Financial Planning System'),
+(7, 'Strategic Expansion Plan'),
+(8, 'Operations Optimization'),
+(9, 'HR Management System'),
+(10, 'New Game Title');

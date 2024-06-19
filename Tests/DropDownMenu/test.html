@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Two Divs Next to Each Other</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between; /* Distributes space between items */
+        }
+        .box {
+            width: 45%; /* Adjust the width as needed */
+            padding: 10px;
+            border: 1px solid #000;
+            box-sizing: border-box; /* Ensures padding is included in the width */
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="box" id="box1">
+        <h2>Box 1</h2>
+        <p>This is the content of the first box.</p>
+    </div>
+    <div class="box" id="box2">
+        <h2>Box 2</h2>
+        <p>This is the content of the second box.</p>
+    </div>
+</div>
+</body>
+</html>

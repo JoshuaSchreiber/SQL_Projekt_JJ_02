@@ -2,14 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="../Bilder/favicon_02.jpg" type="image/x-icon">
+    <link rel="icon" href="../Bilder/EingebundeneBilder/favicon_02.jpg" type="image/x-icon">
     <title>Title</title>
+    <link rel="stylesheet" href="../Styles/divElements.css">
+    <style>
+        .button {
+            width: 400px;
+            height: 132px;
+            transition: width 0.3s, height 0.3s;
+        }
+
+        .button:hover {
+            width: 1320px;
+            height: 164px;
+        }
+    </style>
 </head>
 <body>
-    <a href="Tasks.html">Tasks</a>
-    <br>
-    <a href="documentation.html">Documentation</a>
-    <br>
-    <a href="diagramms.html">ER-Diagramm, Relationsmodell</a>
+    <div class="green-background">
+        <h1>Learn Databank Joshua²</h1>
+        <h3>Learn SQL in the World of the GI Game Company!!!</h3>
+        <h3>A Databank like no other! Only 20 Euros to DE1235 123413241!!!</h3>
+    </div>
+    <div class="grey-background">
+        <button class="button" onclick="button('Tasks.html')" style="font-size: 32px">Tasks</button>
+        <br>
+    </div>
+    <div class="orange-background">
+        <button class="button" onclick="button('documentation.html')" style="font-size: 32px">Documentation</button>
+        <br>
+    </div>
+    <div class="grey-background">
+        <button class="button" onclick="button('diagramms.html')" style="font-size: 32px">ER-Diagramm, Relationsmodell</button>
+    </div>
+
+    <script>
+        function button(url) {
+            window.location.href = url;
+        }
+    </script>
 </body>
 </html>

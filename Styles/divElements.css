@@ -15,3 +15,12 @@
     font-family: Arial, sans-serif;
     border-radius: 5px; /* Rounded corners */
 }
+
+.green-background {
+    background-color: #74B7BE; /* Good grey color */
+    padding: 20px;
+    margin: 20px;
+    color: #000; /* Black text for contrast */
+    font-family: Arial, sans-serif;
+    border-radius: 5px; /* Rounded corners */
+}

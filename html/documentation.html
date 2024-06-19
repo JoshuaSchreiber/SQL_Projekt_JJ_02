@@ -3,22 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <title>Documentation</title>
-    <link rel="icon" href="../Bilder/favicon_02.jpg" type="image/x-icon">
+    <link rel="icon" href="../Bilder/EingebundeneBilder/favicon_02.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="../Styles/divElements.css">
 </head>
 <body>
-<h1>Storyline</h1>
-<h2>Storyline finding_01</h2>
-<img src="../Bilder/Storyline_planing_01.jpeg" alt="Joshua sein Plan">
-<h2>Storyline finding_02</h2>
-<img src="../Bilder/Storyline_planing_02.png" alt="Joshua sein Plan">
-<h2>Storyline finding_finalPlan</h2>
-<img src="../Bilder/Storyline_planing_03.png" alt="Joshua sein Plan">
-<h1>Creation of connection with MYSQL Server</h1>
-<h2>ChatGPT</h2>
-<img src="../Bilder/Creation_of_connection_with_MYSQL_Server_01.png" alt=";-(">
-<h2>Trial and Error³</h2>
-<img src="../Bilder/Creation_of_connection_with_MYSQL_Server_02.png" alt=";-(">
-<h2>Erfolg</h2>
-<img src="../Bilder/Creation_of_connection_with_MYSQL_Server_03.png" alt=";-(">
+    <div class="orange-background">
+        <h1>Storyline</h1>
+        <h2>Storyline finding_01</h2>
+    </div>
+    <div class="grey-background">
+        <img src="../Bilder/EingebundeneBilder/Storyline_planing_01.jpeg" alt="Joshua sein Plan">
+    </div>
+    <div class="orange-background">
+        <h2>Storyline finding_02</h2>
+    </div>
+    <div class="grey-background">
+        <img src="../Bilder/EingebundeneBilder/Storyline_planing_02.png" alt="Joshua sein Plan">
+    </div>
+    <div class="orange-background">
+        <h2>Storyline finding_finalPlan</h2>
+    </div>
+    <div class="grey-background">
+        <img src="../Bilder/EingebundeneBilder/Storyline_planing_03.png" alt="Joshua sein Plan">
+    </div>
+    <div class="orange-background">
+        <h1>Creation of connection with MYSQL Server</h1>
+        <h2>ChatGPT</h2>
+    </div>
+    <div class="grey-background">
+        <img src="../Bilder/EingebundeneBilder/Creation_of_connection_with_MYSQL_Server_01.png" alt=";-(">
+    </div>
+    <div class="orange-background">
+        <h2>Trial and Error³</h2>
+    </div>
+    <div class="grey-background">
+        <img src="../Bilder/EingebundeneBilder/Creation_of_connection_with_MYSQL_Server_02.png" alt=";-(">
+    </div>
+    <div class="orange-background">
+        <h2>Erfolg</h2>
+    </div>
+    <div class="grey-background">
+        <img src="../Bilder/EingebundeneBilder/Creation_of_connection_with_MYSQL_Server_03.png" alt=";-(">
+    </div>
+    <div class="orange-background">
+        <h2>Finding of Companies Brand sign</h2>
+    </div>
+    <div class="grey-background">
+        <img src="../Bilder/EingebundeneBilder/Icon_Default_A_icon_for_a_company_Whith_the_Leters_GC_for_Game_Comp_2.jpg">
+        <img src="../Bilder/EingebundeneBilder/Icon2_Default_A_icon_for_a_company_Whith_the_Leters_GC_for_Game_Comp_3.jpg">
+        <img src="../Bilder/EingebundeneBilder/Icon3_Default_create_a_logowich_lookes_like_a_total_eclipse_and_two_1.jpg">
+    </div>
+    <div class="orange-background">
+        <h2>Concluding on a canged version of picture 3</h2>
+        <h2>Studio designs Concluded on</h2>
+    </div>
+    <div class="grey-background">
+        <img src="../Bilder/EingebundeneBilder/Studio1_Default_Create_a_fantastic_studio_for_a_game_devoloping_compan_1.jpg">
+        <img src="../Bilder/EingebundeneBilder/studio2_Default_Create_the_worst_possible_studio_imaginable_only_one_m_1.jpg">
+        <img src="../Bilder/EingebundeneBilder/Studio3_Default_Create_the_worst_possible_studio_imaginable_Without_an_0.jpg">
+    </div>
+    <div class="orange-background">
+        <h2>ER_Modell</h2>
+    </div>
+    <div class="grey-background">
+        <img src="../Bilder/EingebundeneBilder/ERModel_01.png">
+        <img src="../Bilder/EingebundeneBilder/ERModell_02.png">
+        <img src="../Bilder/EingebundeneBilder/ERModell_03.png">
+        <img src="../Bilder/EingebundeneBilder/ERModell_04.png">
+    </div>
+    <div class="orange-background">
+        <h2>Relationsmodell</h2>
+    </div>
+    <div class="grey-background">
+        <b>
+            Project{ ProjektName_pk, money, TimeConsumed,, Sponsor, TaskPrerequsite, Department_ID_fk#} <br>
+            Mitarbeiter{Mitarbeiter_ID_pk, profession, gehalt, Manager_ID, Untergeordneter_ID, Department_ID_fk#}<br>
+            Leading_Group{LG_ID_pk, obsession, depressionsstatus}<br>
+            Department{DepartmentName_pk, Studio, LG_ID_FK#}<br>
+            ProgrammingD{ Department_ID_pk, Studio, LG_ID_FK#, coffee, programmingEnvironment}<br>
+            AddsD{ Department_ID_pk, Studio, LG_ID_FK#, Style, AddCampaing}<br>
+            DraftsD{ Department_ID_pk, Studio, LG_ID_FK#, Entwurf, predicament}<br>
+            Styles{ StyleID_pk, Forms, Color, AddsD_ID#}<br>
+            ProjektDepartment{Department_ID_FK#,  Project_ID_FK#}<br>
+        </b>
+    </div>
 </body>
 </html>
