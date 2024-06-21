@@ -1,1 +1,68 @@
-[]
+[
+  {
+    "StyleID_pk": 1,
+    "Forms": "Abstract",
+    "Color": "Blue",
+    "AddsD_ID": 11
+  },
+  {
+    "StyleID_pk": 2,
+    "Forms": "Geometric",
+    "Color": "Red",
+    "AddsD_ID": 12
+  },
+  {
+    "StyleID_pk": 3,
+    "Forms": "Organic",
+    "Color": "Green",
+    "AddsD_ID": 13
+  },
+  {
+    "StyleID_pk": 4,
+    "Forms": "Minimalist",
+    "Color": "White",
+    "AddsD_ID": 14
+  },
+  {
+    "StyleID_pk": 5,
+    "Forms": "Futuristic",
+    "Color": "Silver",
+    "AddsD_ID": 15
+  },
+  {
+    "StyleID_pk": 6,
+    "Forms": "Vintage",
+    "Color": "Gold",
+    "AddsD_ID": 16
+  },
+  {
+    "StyleID_pk": 7,
+    "Forms": "Modern",
+    "Color": "Black",
+    "AddsD_ID": 17
+  },
+  {
+    "StyleID_pk": 8,
+    "Forms": "Classic",
+    "Color": "Purple",
+    "AddsD_ID": 18
+  },
+  {
+    "StyleID_pk": 9,
+    "Forms": "Retro",
+    "Color": "Orange",
+    "AddsD_ID": 19
+  },
+  {
+    "StyleID_pk": 10,
+    "Forms": "Steampunk",
+    "Color": "Bronze",
+    "AddsD_ID": 20
+  },
+  {
+    "StyleID_pk": 11,
+    "Forms": "Infinity Corner",
+    "Color": "Black Void",
+    "AddsD_ID": 14
+  }
+]

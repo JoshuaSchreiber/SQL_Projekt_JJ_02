@@ -12,7 +12,7 @@
     </div>
     <div class="orange-background">
         <h1>ER-Modell</h1>
-        <img src="../Bilder/EingebundeneBilder/ERModell_05.png">
+        <img src="../Bilder/EingebundeneBilder/ERModell_06.png">
     </div>
     <div class="grey-background">
         <h1>Relationsmodell: <br></h1>
@@ -21,7 +21,7 @@
             Project{ ProjektName_pk, Money, TimeConsumed, Sponsor, Customer, TaskPrerequsite, Department_ID_fk#} <br>
             Mitarbeiter{Mitarbeiter_ID_pk, profession, gehalt, Manager_ID, Untergeordneter_ID, Department_ID_fk#}<br>
             Leading_Group{LG_ID_pk, obsession, depressionsstatus}<br>
-            Department{Department_ID_pk, Studio, LG_ID_FK#}<br>
+            Department{Department_ID_pk, Studio, DepartmentTyp, LG_ID_FK#}<br>
             ProgrammingD{ Department_ID_pk, Studio, LG_ID_FK#, coffee, programmingEnvironment}<br>
 
             AddsD{ Department_ID_pk, Studio, LG_ID_FK#, Style, AddCampaing}<br>
